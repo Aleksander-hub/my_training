@@ -8,7 +8,7 @@ def calculate_structure_sum(data):
     summa = 0
     if isinstance(data, (list, tuple, set)):
         for i in data:
-            summa += calculate_structure_sum(i)  #
+            summa += calculate_structure_sum(i)
     elif isinstance(data, dict):
         for j, value in data.items():
             summa += calculate_structure_sum(j)
