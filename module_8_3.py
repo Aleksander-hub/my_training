@@ -57,4 +57,6 @@ except IncorrectCarNumbers as exc:
 else:
     print(f'{third.model} успешно создан')
 
+ # шеф все пропало! гипс снимают клиент уезжает
+
 
