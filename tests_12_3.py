@@ -1,3 +1,4 @@
+
 import unittest
 from runner_and_tournament import Runner, Tournament
 
@@ -42,11 +43,12 @@ class TournamentTest(unittest.TestCase):
 
 
     def setUp(self):
-        self.runner1 = Runner("Óñýéí", 10)
-        self.runner2 = Runner("Àíäðåéêà", 9)
-        self.runner3 = Runner("Íèê", 3)
+        self.runner1 = Runner("Усэйн", 10)
+        self.runner2 = Runner("Андрейка", 9)
+        self.runner3 = Runner("Ник", 3)
 
-    @classmethod
+
+    @unittest.skip
     def tearDownClass(cls):
         for i, j in cls.all_results.items():
             print(f"{i}: {j}")
@@ -56,21 +58,21 @@ class TournamentTest(unittest.TestCase):
         tour = Tournament(90, self.runner1, self.runner3)
         result = tour.start()
         self.all_results['TestMethod 1'] = {k: str(v) for k, v in result.items()}
-        self.assertTrue(result[max(result)] == 'Íèê')
+        self.assertTrue(result[max(result)] == 'Ник')
 
     @unittest.skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
     def test_start_2(self):
         tour = Tournament(90, self.runner2, self.runner3)
         result = tour.start()
         self.all_results['TestMethod 2'] = {k: str(v) for k, v in result.items()}
-        self.assertTrue(result[max(result)] == 'Íèê')
+        self.assertTrue(result[max(result)] == 'Ник')
 
     @unittest.skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
     def test_start_3(self):
         tour = Tournament(90, self.runner2, self.runner3, self.runner1)
         result = tour.start()
         self.all_results['TestMethod 3'] = {k: str(v) for k, v in result.items()}
-        self.assertTrue(result[max(result)] == 'Íèê')
+        self.assertTrue(result[max(result)] == 'Ник')
 
 
 if __name__ == "__main__":
