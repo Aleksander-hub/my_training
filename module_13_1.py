@@ -3,22 +3,22 @@ import asyncio
 
 async def start_strongman_1(name, power):
     print(f"Силач {name} начал соревнования")
-    for i in range(1, power + 1):
-        await asyncio.sleep(1)
+    for i in range(1, 6):
+        await asyncio.sleep(power)
         print(f'Силач {name} поднял {i} шар')
     print(f"Силач {name} закончил соревнования")
 
 async def start_strongman_2(name, power):
     print(f"Силач {name} начал соревнования")
-    for i in range(1, power + 1):
-        await asyncio.sleep(2)
+    for i in range(1, 6):
+        await asyncio.sleep(power)
         print(f'Силач {name} поднял {i} шар')
     print(f"Силач {name} закончил соревнования")
 
 async def start_strongman_3(name, power):
     print(f"Силач {name} начал соревнования")
-    for i in range(1, power + 1):
-        await asyncio.sleep(3)
+    for i in range(1, 6):
+        await asyncio.sleep(power)
         print(f'Силач {name} поднял {i} шар')
     print(f"Силач {name} закончил соревнования")
 
