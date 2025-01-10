@@ -24,30 +24,30 @@ async def set_age(message):
 
 @dp.message_handler(state= UserState.user)
 async def set_user(message, state):
-    await state.update_data(us = message.text)
+    await state.update_data(usr = message.text)
     await message.answer("Введите свой возраст:")
     await UserState.age.set()
 
 @dp.message_handler(state= UserState.age)
 async def age_handler(message, state):
-    await state.update_data(age = message.text)
+    await state.update_data(ag = message.text)
     await message.answer("Введите свой рост:")
     await UserState.growth.set()
 
 @dp.message_handler(state= UserState.growth)
 async def growth_handler(message, state):
-    await state.update_data(growth = message.text)
+    await state.update_data(grow = message.text)
     await message.answer("Введите свой вес:")
     await UserState.weight.set()
 
 @dp.message_handler(state= UserState.weight)
 async def weight_handler(message, state):
-    await state.update_data(weight = message.text)
+    await state.update_data(weig = message.text)
     data = await state.get_data()
-    if data['us'] == "жен":
-        calories = int(10 * int(data['weight']) + 6.25 * int(data['growth']) - 5 * int(data['age']) - 161)
+    if data['usr'] == "жен":
+        calories = int(10 * int(data['weig']) + 6.25 * int(data['grow']) - 5 * int(data['ag']) - 161)
     else:
-        calories = int(10 * int(data['weight']) + 6.25 * int(data['growth']) - 5 * int(data['age']) + 5)
+        calories = int(10 * int(data['weig']) + 6.25 * int(data['grow']) - 5 * int(data['ag']) + 5)
 
     await message.answer(f"Ваша норма {calories} калорий.")
     await state.finish()
