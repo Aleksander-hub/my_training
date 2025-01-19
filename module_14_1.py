@@ -30,13 +30,10 @@ balance INTEGER
 
 cursor.execute('SELECT username, email, age, balance FROM Users WHERE age != 60')
 users = cursor.fetchall()
-my_table = ['Имя: ', ' | Почта: ', ' | Возраст: ', ' | Баланс: ']
 
 for user in users:
-    for i in range(len(user)):
-        print(my_table[i], end='')
-        print(user[i], end='')
-    print()
+    print(f"Имя: {user[0]} | Почта: {user[1]} | Возраст: {user[2]} | Баланс {user[3]}")
+
 
 
 connection.commit()
