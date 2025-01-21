@@ -10,7 +10,7 @@ from aiogram.fsm.state import StatesGroup, State
 
 
 logging.basicConfig(level= logging.INFO)
-bot = Bot(token='7266456982:AAHD3565fBvroH2CqC3dHrOKO7nquuQeQzI')
+bot = Bot(token='------------')
 dp = Dispatcher()
 
 in_kb = InlineKeyboardMarkup(inline_keyboard=[
